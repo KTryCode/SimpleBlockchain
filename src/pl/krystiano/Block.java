@@ -2,18 +2,18 @@ package pl.krystiano;
 
 
 import java.util.Arrays;
+import java.util.Date;
 
 public class Block {
-    private int previousHash;
-    private String[] transactions;
+    public String hash;
+    public String previousHash;
+    private String data; //our data will be a simple message.
+    private long timeStamp; //as number of milliseconds since 1/1/1970.
 
-    private int blockHash;
-
-    public Block(int previousHash, String[] transactions) {
+    //Block Constructor.
+    public Block(String data, String previousHash) {
+        this.data = data;
         this.previousHash = previousHash;
-        this.transactions = transactions;
-
-        Object[] contens = {Arrays.hashCode(transactions), previousHash};
-        this.blockHash = Arrays.hashCode(contens);
+        this.timeStamp = new Date().getTime();
     }
 }
