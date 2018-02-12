@@ -8,7 +8,7 @@ import java.util.List;
 public class NoobChain {
 
     public static List<Block> blockchain = new ArrayList<>();
-    public static int difficulty = 10;
+    public static int difficulty = 6;
 
     public static void main(String[] args) {
         blockchain.add(new Block("Hi im the first block", "0"));
